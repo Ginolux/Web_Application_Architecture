@@ -1,0 +1,23 @@
+#register_btn{
+  margin-right: 2em;
+}
+
+.list_item>a>img{
+  border: 0.2em solid Transparent;
+}
+
+.list_item>a>img:hover{
+  border: 0.2em solid yellow;
+}
+
+.scrollable{
+  padding: 0.2em 0;
+}
+
+.hidden{
+  display: none;
+}
+
+.carousel-control-prev, .carousel-control-next{
+  width: 5em;
+}
