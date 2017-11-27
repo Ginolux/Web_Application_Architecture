@@ -46,12 +46,12 @@
 <!-- for modals -->
   <div>
     <?php
-      include 'login_modal.php'
+      include 'templates/login_modal.php'
     ?>
   </div>
 
   <div>
     <?php
-      include 'signup_modal.php'
+      include 'templates/signup_modal.php'
     ?>
   </div>
