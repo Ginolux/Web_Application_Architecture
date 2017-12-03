@@ -21,3 +21,8 @@
 .carousel-control-prev, .carousel-control-next{
   width: 5em;
 }
+
+
+.category>a {
+  text-decoration: none;
+}

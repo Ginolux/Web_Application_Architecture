@@ -1,11 +1,11 @@
 <div class="category">
   <h1 >
-     <a href="movies_cat.php?q=2" style=" text-decoration: none">Comedie</a>
+     <a href="movies_cat.php?q=4" style=" text-decoration: none">Horror</a>
   </h1>
 </div>
 
 <div class="scrollable">
-  <div id="scrollable_2" class="carousel slide" data-ride="carousel">
+  <div id="scrollable_3" class="carousel slide" data-ride="carousel">
 
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -17,7 +17,7 @@
             include "db/connection.php";
 
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("SELECT * FROM movie WHERE category_id=2");
+            $stmt = $conn->prepare("SELECT * FROM movie WHERE category_id=4");
             //$stmt->bindParam(':category_id', '1');
             //$stmt->bindParam(':password', $password);
             $stmt->execute();

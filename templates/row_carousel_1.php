@@ -1,75 +1,71 @@
+<div class="category">
+  <h1 >
+     <a href="movies_cat.php?q=1" style=" text-decoration: none">Action</a>
+  </h1>
+</div>
 
-<?php
-$data_content='<div> Optionaldhlkh;shf;sdlfkhd;lkf;akhf;dlhfdlksfh;lfh;lsf;slfh;lkd;lkdhf;l <button type="button" class="btn btn-primary">Primary</button><div>'
-?>
 <div class="scrollable">
   <div id="scrollable_1" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#scrollable_1" data-slide-to="0" class="active"></li>
-    <li data-target="#scrollable_1" data-slide-to="1"></li>
-    <li data-target="#scrollable_1" data-slide-to="2"></li>
-  </ul>
 
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="flex-row d-flex flex-nowrap">
-        <div class="list_item">
-          <a  id="example-popover" href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
 
-          <div id="example-popover-content" class="hidden">
-              <div>
-                <b>Example popover</b> - content
-                <button type="button" class="btn btn-primary">Primary</button>
-              </div>
-            </div>
+        <?php
+        //PHP start
+        try {
+            include "db/connection.php";
 
-            <div id="example-popover-title" class="hidden">
-              <b>Example popover</b> - title
-            </div>
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt = $conn->prepare("SELECT * FROM movie WHERE category_id=1");
+            //$stmt->bindParam(':category_id', '1');
+            //$stmt->bindParam(':password', $password);
+            $stmt->execute();
 
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com" ><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $i = 1;
+            foreach($result as $row) {
+              if($i < 8 )
+
+              {?>
+
+                <div class="list_item">
+                  <a  class="my-popover" id="<?php echo $row['movie_id']; ?>" href="movie.php?q=<?php echo $row['movie_id']; ?>"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
+                </div>
+
+
+            <?php } $i++;
+             }
+            //Continue PHP
+
+            }
+        catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+        $conn = null;
+
+        ?>
+
       </div>
     </div>
 
 
     <div class="carousel-item">
       <div class="flex-row d-flex flex-nowrap">
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
-        <div class="list_item">
-          <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
-        </div>
+
+        <?php
+        $k = 1;
+        foreach($result as $row) {
+          $k++;
+          if($k >= 8 AND $k <15) { ?>
+
+            <div class="list_item">
+              <a  class="my-popover" id="<?php echo $row['movie_id']; ?>" href="movie.php?q=<?php echo $row['movie_id']; ?>"><img class="d-block w-100" src="http://via.placeholder.com/225x315"></a>
+            </div>
+
+       <?php }
+          } ?>
+
       </div>
     </div>
 
@@ -79,4 +75,6 @@ $data_content='<div> Optionaldhlkh;shf;sdlfkhd;lkf;akhf;dlhfdlksfh;lfh;lsf;slfh;
   <a class="carousel-control-next" href="#scrollable_1" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
+</div>
+</div>
 </div>

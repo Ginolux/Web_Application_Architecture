@@ -1,3 +1,5 @@
+
+
 <!-- Modal -->
 <div class="modal fade" id="login-modal" role="dialog">
   <div class="modal-dialog">
@@ -20,7 +22,7 @@
           </div>
           <div class="form-group has-success">
             <label class="custom-control custom-checkbox">
-              <input type="checkbox" value="" checked class="custom-control-input">
+              <input type="checkbox" value="yes" checked class="custom-control-input">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">Remember me</span>
             </label>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <!-- Brand -->
-    <a class="navbar-brand" href="#">MovieBox</a>
+    <a class="navbar-brand" href="index.php">MovieBox</a>
 
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -33,7 +33,22 @@
       </ul>
     </div>
 
-      <button type="button" class="btn btn-link" id="login-btn">Login</button>
+      <?php
+        //if(isset($_SESSION['login_user'])){
+        if (isset($_SESSION['login_user'])) {
+          if (isset($_COOKIE["user"])) {
+            echo '<p style="color: grey"> Hello ' . $_COOKIE["user"] . '</p></br>';
+          }
+          //echo '<button type="button" class="btn btn-link" >Logout</button>';
+          echo '<button type="button" class="btn btn-link" ><a href="db/logout.php">Logout<?php session_destroy(); ?></a></button>';
+          //echo '<a href="index.php" class="btnbtn-link active" role="button" aria-pressed="true">Logout</a>';
+          //session_destroy();
+        }
+        else {
+          echo '<button type="button" class="btn btn-link" id="login-btn">Login</button>';
+        }
+      ?>
+      <!---<button type="button" class="btn btn-link" id="login-btn">Login</button>-->
       <button type="button" id="register_btn" class="btn btn-outline-light">Register</button>
       <!-- Search Form -->
       <form class="form-inline">
@@ -46,12 +61,12 @@
 <!-- for modals -->
   <div>
     <?php
-      include 'templates/login_modal.php'
+      include 'login_modal.php'
     ?>
   </div>
 
   <div>
     <?php
-      include 'templates/signup_modal.php'
+      include 'signup_modal.php'
     ?>
   </div>
