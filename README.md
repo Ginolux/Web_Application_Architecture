@@ -17,6 +17,6 @@ In the application, users are be able to:
 
  Users can see different categories of movies available in the stores along with all the informations: title, year, description, language, rating.
  
-<b>Underlying technology:<b>
-I use Bootstrap for the front-end. 
-For the back-end, I use PHP with MariaBD server.
+<b>Underlying technology:</b>
+I used Bootstrap for the front-end. 
+For the back-end, I used PHP with MariaBD server.
