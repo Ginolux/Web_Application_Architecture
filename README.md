@@ -4,6 +4,19 @@
 
 My project is a movie ranting application that aggregate all the movies in different stores in the city in one place.
 
-In the application, users will be able to: register, login and logout, search for movies. Their researches will give them the location of the stores that have the movie or notify them if the movie is rent out. Users can see new movies available in the stores with all the informations: title, year, producer, language, rating.
+In the application, users are be able to:
 
-For the underlying technology, I plan to use Bootstrap and React for the front-end. For the back-end, I will use PHP with Nginx server and for the database, PostgreSQL.
+ <ul>
+  <li>register, login, logout</li>
+  <li>search for movies</li>
+  <li>see movie availability</li>
+  <li>see stores where the movie is availabe</li>
+  <li>see the closest store to user location</li>
+
+</ul> 
+
+ Users can see different categories of movies available in the stores along with all the informations: title, year, description, language, rating.
+ 
+<b>Underlying technology:<b>
+I use Bootstrap for the front-end. 
+For the back-end, I use PHP with MariaBD server.
