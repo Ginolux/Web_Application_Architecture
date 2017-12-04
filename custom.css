@@ -22,7 +22,13 @@
   width: 5em;
 }
 
+.category {
+  padding-top: 1em;
+  margin-bottom: 0em;
+}
 
-.category>a {
-  text-decoration: none;
+/*  Footer css */
+.panel {
+  margin-top: 3em;
+  background-color: grey;
 }

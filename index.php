@@ -36,6 +36,9 @@
       include 'templates\row_carousel_4.php'
     ?>
 
-
   </body>
+
+  <?php
+    include 'templates\footer.php'
+  ?>
 </html>

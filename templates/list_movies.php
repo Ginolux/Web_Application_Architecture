@@ -9,7 +9,7 @@ if(!empty($q)) {
             include "db/connection.php";
 
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("SELECT * FROM movie WHERE category_id=:category_id");
+            $stmt = $conn->prepare("SELECT movie_id FROM movie WHERE category_id=:category_id");
             $stmt->bindParam(':category_id', $q);
             //$stmt->bindParam(':password', $password);
             $stmt->execute();

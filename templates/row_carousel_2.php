@@ -1,7 +1,7 @@
 <div class="category">
-  <h1 >
-     <a href="movies_cat.php?q=2" style=" text-decoration: none">Comedie</a>
-  </h1>
+  <h2>
+     <a href="movies_cat.php?q=2" style=" text-decoration: none">Comedy</a>
+  </h2>
 </div>
 
 <div class="scrollable">
@@ -17,7 +17,7 @@
             include "db/connection.php";
 
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("SELECT * FROM movie WHERE category_id=2");
+            $stmt = $conn->prepare("SELECT movie_id FROM movie WHERE category_id=2");
             //$stmt->bindParam(':category_id', '1');
             //$stmt->bindParam(':password', $password);
             $stmt->execute();

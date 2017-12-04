@@ -11,24 +11,25 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Contact</a>
         </li>
         <!-- Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Dropdown link
+            Categories
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
+            <a class="dropdown-item" href="movies_cat.php?q=1">Action</a>
+            <a class="dropdown-item" href="movies_cat.php?q=2">Comedy</a>
+            <a class="dropdown-item" href="movies_cat.php?q=3">Romance</a>
+            <a class="dropdown-item" href="movies_cat.php?q=4">Horror</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="store_map.php?q=">Stores Location</a>
         </li>
       </ul>
     </div>
@@ -51,8 +52,8 @@
       <!---<button type="button" class="btn btn-link" id="login-btn">Login</button>-->
       <button type="button" id="register_btn" class="btn btn-outline-light">Register</button>
       <!-- Search Form -->
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <form class="form-inline" action="db/search_start.php" method="post">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search">
         <button class="btn btn-success" type="submit">Search</button>
       </form>
 

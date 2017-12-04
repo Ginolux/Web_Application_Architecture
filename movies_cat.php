@@ -20,6 +20,31 @@
     include 'templates/navigation.php'
   ?>
 
+  <div class="category">
+    <h2>
+      <?php
+          switch ($_GET['q']) {
+          case "1":
+              echo '<a href="#" style=" text-decoration: none">Action</a>';
+              break;
+          case "2":
+              echo '<a href="#" style=" text-decoration: none">Comedy</a>';
+              break;
+          case "3":
+              echo '<a href="#" style=" text-decoration: none">Romance</a>';
+              break;
+          case "4":
+              echo '<a href="#" style=" text-decoration: none">Horror</a>';
+              break;
+          default:
+              echo '<a href="#" style=" text-decoration: none">Category</a>';
+          }
+      ?>
+    </h2>
+  </div>
+
+
+
   <div class="flex-row d-flex flex-nowrap">
       <?php
         $start = 0;
@@ -54,4 +79,9 @@
 
 
 <body>
+
+  <?php
+    include 'templates\footer.php'
+  ?>
+
 </html>
