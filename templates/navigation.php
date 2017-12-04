@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <!-- Brand -->
-    <a class="navbar-brand" href="index.php">MovieBox</a>
+    <a class="navbar-brand" href="/moviebox/index.php">MovieBox</a>
 
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -52,7 +52,7 @@
       <!---<button type="button" class="btn btn-link" id="login-btn">Login</button>-->
       <button type="button" id="register_btn" class="btn btn-outline-light">Register</button>
       <!-- Search Form -->
-      <form class="form-inline" action="db/search_start.php" method="post">
+      <form class="form-inline" action="/moviebox/db/search_start.php" method="post">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search">
         <button class="btn btn-success" type="submit">Search</button>
       </form>

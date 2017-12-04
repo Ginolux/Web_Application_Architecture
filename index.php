@@ -41,4 +41,23 @@
   <?php
     include 'templates\footer.php'
   ?>
+
+  <script>
+      $('#scrollable_1').carousel({
+        //pause: true,
+        interval: false
+      });
+
+      $('#scrollable_2').carousel({
+        //pause: true,
+        interval: false
+      });
+
+      $('#scrollable_3').carousel({
+        //pause: true,
+        interval: false
+      });
+  </script>
+
+
 </html>

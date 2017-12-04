@@ -39,57 +39,29 @@ function test_input($data) {
 
 
 
-echo "<table style='border: solid 1px black;'>";
-echo "<tr>
-<th>Id</th><th>Title</th>
-<th>Description</th>
-<th>Year</th>
-<th>Duration</th>
-<th>Cost</th>
-<th>Category</th>
-<th>Store</th>
-</tr>";
-
-class TableRows extends RecursiveIteratorIterator {
-    function __construct($it) {
-        parent::__construct($it, self::LEAVES_ONLY);
-    }
-
-    function current() {
-        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
-    }
-
-    function beginChildren() {
-        echo "<tr>";
-    }
-
-    function endChildren() {
-        echo "</tr>" . "\n";
-    }
-}
-
-
 try {
     include "connection.php";
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT DISTINCT title, description, release_year, duration, rent_cost, category.name, store.name
+    $stmt = $conn->prepare("SELECT movie.movie_id, movie.title, movie.description, movie.release_year, movie.duration, movie.rent_cost, category.name as category, language.name as language, store.name as store_name
                             FROM movie
                             INNER JOIN category ON movie.category_id=category.category_id
-                            INNER JOIN store ON movie.store_id=store.store_id WHERE (title LIKE '%$search%' OR release_year LIKE '%$search%' OR category.name LIKE '%$search%' OR store.name LIKE '%$search%' OR rent_cost LIKE '%$search%')");
+                            INNER JOIN store ON movie.store_id=store.store_id
+                            INNER JOIN language ON movie.language_id=language.language_id
+                            WHERE (title LIKE '%$search%' OR release_year LIKE '%$search%' OR category.name LIKE '%$search%' OR store.name LIKE '%$search%' OR rent_cost LIKE '%$search%' OR language.name LIKE '%$search%')");
     //$stmt->bindParam(':search', $search);
     $stmt->execute();
 
     // set the resulting array to associative
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     //print_r($result);
     //print("\n");
 
-
-    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-        echo $v;
+    foreach ($result as $row) {
+      echo '<a href="../movie.php?q=' . $row['movie_id'] . '">' . $row['title'] . '</a></br>';
     }
+
 
     }
 catch(PDOException $e) {

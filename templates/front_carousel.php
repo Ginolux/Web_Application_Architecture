@@ -8,21 +8,21 @@
     <div class="carousel-item active">
       <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/1500x400"></a>
       <div class="carousel-caption">
-        <h3>Los Angeles</h3>
-        <p>We had such a great time in LA!</p>
+        <h3>Spider Man </h3>
+        <p>We had such a great time!</p>
       </div>
     </div>
     <div class="carousel-item">
       <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/1500x400"></a>
       <div class="carousel-caption">
-        <h3>Chicago</h3>
-        <p>Thank you, Chicago!</p>
+        <h3>Kong, Skull Island</h3>
+        <p>Explosive war between monster and man!</p>
       </div>
     </div>
     <div class="carousel-item">
       <a href="https://placeholder.com"><img class="d-block w-100" src="http://via.placeholder.com/1500x400"></a>
       <div class="carousel-caption">
-        <h3>New York</h3>
+        <h3>Girl Trip</h3>
         <p>We love the Big Apple!</p>
       </div>
     </div>
