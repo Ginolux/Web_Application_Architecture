@@ -6,7 +6,7 @@ session_start();
 <?php
 //if(isset($_POST['submit'])){
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  echo "Yes! It works!";
+  //echo "Yes! It works!";
   $email = test_input($_POST["email"]);
   $password = test_input($_POST["password"]);
 }
@@ -50,8 +50,8 @@ try {
       }
       else
       {
-          echo 'The username or password are incorrect!';
-          header("location: ../index.php");
+          echo 'The username or password is incorrect!';
+          header("location: ../login_error.php");
           //header("location: ../error.php");
       }
 
