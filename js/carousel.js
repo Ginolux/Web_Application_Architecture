@@ -15,4 +15,9 @@ $(document).ready(function(){
     interval: false
   });
 
+  $('#scrollable_4').carousel({
+    //pause: true,
+    interval: false
+  });
+
 });
