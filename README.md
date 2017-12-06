@@ -19,4 +19,4 @@ In the application, users are be able to:
  
 <b>Underlying technologies:</b>
 I used Bootstrap for the front-end. 
-For the back-end, I used PHP with MariaBD server.
+For the back-end, I used PHP with MariaBD server and AJAX.
