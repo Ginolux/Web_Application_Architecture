@@ -5,7 +5,7 @@
 </div>
 
 <div class="scrollable">
-  <div id="scrollable_3" class="carousel slide" data-ride="carousel">
+  <div id="scrollable_4" class="carousel slide" data-ride="carousel">
 
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -69,10 +69,10 @@
       </div>
     </div>
 
-  <a class="carousel-control-prev" href="#scrollable_1" data-slide="prev">
+  <a class="carousel-control-prev" href="#scrollable_4" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>
-  <a class="carousel-control-next" href="#scrollable_1" data-slide="next">
+  <a class="carousel-control-next" href="#scrollable_4" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>

@@ -69,10 +69,10 @@
       </div>
     </div>
 
-  <a class="carousel-control-prev" href="#scrollable_1" data-slide="prev">
+  <a class="carousel-control-prev" href="#scrollable_2" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>
-  <a class="carousel-control-next" href="#scrollable_1" data-slide="next">
+  <a class="carousel-control-next" href="#scrollable_2" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
