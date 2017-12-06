@@ -66,9 +66,11 @@ if(!empty($search)) {
             echo '<p>' . $counter . ' result(s) found.</p>';
           }
 
+          echo '<ul class="list-styled">';
           foreach ($result as $row) { //list results
-            echo '<a href="../movie.php?q=' . $row['movie_id'] . '">' . $row['title'] . '</a></br>';
+            echo '<li><a href="../movie.php?q=' . $row['movie_id'] . '">' . $row['title'] . '</a></li>';
           }
+          echo '</ul>';
         }
 
         if(empty($result)) {

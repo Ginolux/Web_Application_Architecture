@@ -40,6 +40,7 @@ try {
     $stmt->execute();
 
     echo "New records created successfully";
+    header("location: ../login_register.php"); // Redirecting To Main Page
     }
 catch(PDOException $e)
     {
