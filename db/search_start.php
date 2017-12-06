@@ -20,7 +20,8 @@ session_start();
     include '../templates/navigation.php'
   ?>
 
-  <h1>Search Results:</h1>
+  <h1> Search results: </h1>
+
 
 
 <?php
@@ -38,44 +39,52 @@ function test_input($data) {
   return $data;
 }
 
+if(!empty($search)) {
+  try {
+      include "connection.php";
 
-try {
-    include "connection.php";
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $stmt = $conn->prepare("SELECT movie.movie_id, movie.title, movie.description, movie.release_year, movie.duration, movie.rent_cost, category.name as category, language.name as language, store.name as store_name
+                              FROM movie
+                              INNER JOIN category ON movie.category_id=category.category_id
+                              INNER JOIN store ON movie.store_id=store.store_id
+                              INNER JOIN language ON movie.language_id=language.language_id
+                              WHERE (title LIKE '%$search%' OR release_year LIKE '%$search%' OR category.name LIKE '%$search%' OR store.name LIKE '%$search%' OR rent_cost LIKE '%$search%' OR language.name LIKE '%$search%')");
+      //$stmt->bindParam(':search', $search);
+      $stmt->execute();
 
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT movie.movie_id, movie.title, movie.description, movie.release_year, movie.duration, movie.rent_cost, category.name as category, language.name as language, store.name as store_name
-                            FROM movie
-                            INNER JOIN category ON movie.category_id=category.category_id
-                            INNER JOIN store ON movie.store_id=store.store_id
-                            INNER JOIN language ON movie.language_id=language.language_id
-                            WHERE (title LIKE '%$search%' OR release_year LIKE '%$search%' OR category.name LIKE '%$search%' OR store.name LIKE '%$search%' OR rent_cost LIKE '%$search%' OR language.name LIKE '%$search%')");
-    //$stmt->bindParam(':search', $search);
-    $stmt->execute();
+      // set the resulting array to associative
+      $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $counter = $stmt->rowCount();
+      //print_r($result);
+      //print("\n");
 
-    // set the resulting array to associative
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    //print_r($result);
-    //print("\n");
-    echo '<div class="jumbotron jumbotron-fluid">';
-      if($result>0) {
-        foreach ($result as $row) {
-          echo '<a href="../movie.php?q=' . $row['movie_id'] . '">' . $row['title'] . '</a></br>';
+      echo '<div class="jumbotron jumbotron-fluid">';
+        if($result>0) {
+          if($counter>0) { //count results
+            echo '<p>' . $counter . ' result(s) found.</p>';
+          }
+
+          foreach ($result as $row) { //list results
+            echo '<a href="../movie.php?q=' . $row['movie_id'] . '">' . $row['title'] . '</a></br>';
+          }
         }
-      }
 
-      if(empty($result)) {
-        echo '<h1><b>Sorry, Not Found !</b></h1>';
-      }
-    echo '</div>';
+        if(empty($result)) {
+          echo '<h1><b>Sorry, Not Result Found !</b></h1>';
+        }
+      echo '</div>';
 
-    }
-catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
+      }
+  catch(PDOException $e) {
+      echo "Error: " . $e->getMessage();
+  }
+  $conn = null;
+
 }
-$conn = null;
+  ?>
 
-?>
 
 </body>
 </html>
