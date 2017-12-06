@@ -26,7 +26,7 @@ if(isset($_POST["id"])) {
         <li class="list-group-item"><b>Duration: </b>' . $result['duration'] . ' minutes </li>
         <li class="list-group-item"><b>Category: </b>' . $result['category'] . ' </li>
         <li class="list-group-item"><b>Available: </b>Yes
-          <a class="btn btn-primary" style="display:block" href="#" role="button">Rent</a>
+          <a class="btn btn-primary" style="display:block" href="login_register.php" role="button">Rent</a>
         </li>
         <li class="list-group-item"><b>Price: </b>' . $result['rent_cost'] . ' Euro </li>
       </ul>

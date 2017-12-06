@@ -22,6 +22,7 @@ session_start();
 
   <h1>Search Results:</h1>
 
+
 <?php
 //if(isset($_POST['submit'])){
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -36,7 +37,6 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
 
 
 try {
@@ -57,11 +57,17 @@ try {
 
     //print_r($result);
     //print("\n");
+    echo '<div class="jumbotron jumbotron-fluid">';
+      if($result>0) {
+        foreach ($result as $row) {
+          echo '<a href="../movie.php?q=' . $row['movie_id'] . '">' . $row['title'] . '</a></br>';
+        }
+      }
 
-    foreach ($result as $row) {
-      echo '<a href="../movie.php?q=' . $row['movie_id'] . '">' . $row['title'] . '</a></br>';
-    }
-
+      if(empty($result)) {
+        echo '<h1><b>Sorry, Not Found !</b></h1>';
+      }
+    echo '</div>';
 
     }
 catch(PDOException $e) {

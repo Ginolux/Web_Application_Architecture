@@ -50,7 +50,7 @@
           <li class="list-group-item"><b>Duration: </b>' . $result['duration'] . ' minutes </li>
           <li class="list-group-item"><b>Category: </b>' . $result['category'] . ' </li>
           <li class="list-group-item"><b>Available in: </b>' . $result['store_name'] . '
-            <a class="btn btn-primary" style="display:block" href="#" role="button">Rent</a>
+            <a class="btn btn-primary" style="display:block" href="login_register.php" role="button">Rent</a>
           </li>
           <li class="list-group-item"><b>Store address: </b>' . $result['store_address'] . '
             <a class="btn btn-primary btn-sm" href="store_map.php?q=' . $result['store_id'] . '" role="button">Location</a>
@@ -81,10 +81,10 @@
          <b>Movie: </b><?php echo $result['title']; ?>
       </h1>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top: 3em">
       <div class="col-6 col-md-4"><img class="d-block w-100" src="http://via.placeholder.com/1000x1500"></div>
-      <div class="col-6 col-md-6"><?php echo $output; ?></div>
-      <div class="col-6 col-md-2"> </div>
+      <div class="col-6 col-md-4"><?php echo $output; ?></div>
+      <div class="col-6 col-md-4"><?php include "distance.php"; ?></div>
     </div>
   </div>
 

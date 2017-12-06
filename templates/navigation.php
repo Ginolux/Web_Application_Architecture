@@ -29,6 +29,9 @@
           </div>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="#">Games</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="store_map.php?q=">Stores Location</a>
         </li>
       </ul>

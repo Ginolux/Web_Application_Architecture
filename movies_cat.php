@@ -20,7 +20,7 @@
     include 'templates/navigation.php'
   ?>
 
-  <div class="category">
+  <div class="category" style="margin-top: 2em">
     <h2>
       <?php
           switch ($_GET['q']) {
